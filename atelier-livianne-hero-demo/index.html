@@ -59,7 +59,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,500&family=Libre+Caslon+Text:ital,wght@0,400..700;1,400..700&[...]
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,500&family=Libre+Caslon+Text:ital,wght@0,400..700;1,400..700&display=swap"
       rel="stylesheet"
     />
     <link rel="preload" as="video" href="hero.mp4" type="video/mp4" />
@@ -77,13 +77,13 @@
         --nav-pad-left: clamp(10px, 1.2vw, 18px);
         --hero-copy-inset: clamp(74px, 10vw, 170px);
         --section-y: clamp(20px, 3vh, 40px);
-        /* Hero "A": size caps; max-height also bounded by shell so the mark is never cropped */
+        /* Hero “A”: size caps; max-height also bounded by shell so the mark is never cropped */
         --a-mark-max-w: calc(78vw * 1.12 * 0.98 * 1.06);
         --a-mark-max-h: calc(70vh * 1.1 * 0.98 * 1.06);
         --a-shift-x: -3%;
         --hero-center-pad-t: clamp(24px, 4.5vh, 52px);
         --hero-center-pad-b: clamp(48px, 11vh, 120px);
-        /* Hero copy: offsets + lift — "Decision Architecture™" parallel to "A" left foot */
+        /* Hero copy: offsets + lift — “Decision Architecture™” parallel to “A” left foot */
         --hero-copy-base-mt: clamp(32px, 5vh, 72px);
         --hero-copy-offset: 50px;
         --hero-copy-align-lift: 0px;
@@ -750,110 +750,6 @@
         height: clamp(8px, 1.2vh, 14px);
       }
 
-      /* ===================================================
-         ABOUT SECTION ONLY — IMPROVED DESIGN
-         =================================================== */
-
-      #about {
-        padding-top: clamp(40px, 5vh, 80px);
-        box-sizing: border-box;
-      }
-
-      @media (min-width: 992px) {
-
-        #about .section__inner {
-          height: calc(100vh - 80px);
-          display: flex;
-          align-items: stretch;
-        }
-
-        #about .about {
-          display: grid;
-          grid-template-columns: minmax(320px, 380px) minmax(0, 1fr);
-          gap: clamp(60px, 8vw, 100px);
-          width: 100%;
-          height: 100%;
-          align-items: start;
-        }
-
-        /* Left Image */
-        #about .about__image {
-          display: block;
-          width: 100%;
-          height: auto;
-          margin: 0;
-          align-self: start;
-          position: sticky;
-          top: 0;
-          border-radius: clamp(4px, 0.5vw, 8px);
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-        }
-
-        /* Right Content */
-        #about .about__content {
-          min-width: 0;
-          min-height: 0;
-          padding-top: clamp(40px, 4vh, 60px);
-          overflow-y: auto;
-          overflow-x: hidden;
-          padding-right: clamp(16px, 2vw, 32px);
-        }
-
-        /* Improved Scrollbar */
-        #about .about__content::-webkit-scrollbar {
-          width: 5px;
-        }
-
-        #about .about__content::-webkit-scrollbar-track {
-          background: transparent;
-        }
-
-        #about .about__content::-webkit-scrollbar-thumb {
-          background: rgba(0, 0, 0, 0.12);
-          border-radius: 3px;
-        }
-
-        #about .about__content::-webkit-scrollbar-thumb:hover {
-          background: rgba(0, 0, 0, 0.22);
-        }
-
-        #about .prose {
-          margin-bottom: clamp(32px, 4vh, 56px);
-        }
-
-        #about .prose p:last-child {
-          margin-bottom: 0;
-        }
-      }
-
-      @media (max-width: 991px) {
-
-        #about {
-          padding-top: clamp(28px, 4vh, 40px);
-        }
-
-        #about .section__inner {
-          height: auto;
-        }
-
-        #about .about {
-          display: block;
-        }
-
-        #about .about__image {
-          position: static;
-          width: 100%;
-          margin-bottom: clamp(28px, 4vh, 40px);
-          border-radius: clamp(3px, 0.4vw, 6px);
-          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
-        }
-
-        #about .about__content {
-          overflow: visible;
-          padding-right: 0;
-        }
-      }
-
       /* About (image + text, clean, no masking) */
       .about {
         width: min(var(--section-max), 100%);
@@ -876,7 +772,7 @@
         display: block;
         object-fit: cover;
         aspect-ratio: 3 / 4;
-        /* Slight downward bias: tall sources + cover still read "top" without shearing hair */
+        /* Slight downward bias: tall sources + cover still read “top” without shearing hair */
         object-position: 50% 14%;
         border: 0;
         border-radius: 0;
@@ -1057,7 +953,7 @@
         scroll-padding-top: clamp(20px, 3.5vh, 40px);
       }
 
-      /* Mobile: same "one viewport, no scroll" shell as desktop */
+      /* Mobile: same “one viewport, no scroll” shell as desktop */
       @media (max-width: 520px) {
         html,
         body {
@@ -1105,62 +1001,1846 @@
         width: 100%;
         max-width: var(--section-max);
         margin: 0 auto;
-        gap: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: clamp(18px, 2.8vh, 36px);
+      }
+
+      #work .section__kicker,
+      #model .section__kicker,
+      #contact .section__kicker {
+        align-self: center;
+      }
+
+      .contact__link {
+        text-decoration: none;
+        border: 0;
+        box-shadow: none;
+        color: inherit;
+      }
+
+      #contact a.contact__link,
+      #contact a.contact__link:visited {
+        color: inherit;
+        text-decoration: none;
+        border-bottom: 0;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      #contact a.contact__link:focus-visible {
+        outline: 1px solid var(--text);
+        outline-offset: 6px;
+      }
+
+      .contact__emailWrap {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
         text-align: center;
       }
 
-      #model.section.app-view {
-        overflow-x: hidden;
-        overflow-y: auto;
-        overscroll-behavior-y: contain;
-        -webkit-overflow-scrolling: touch;
-        align-content: flex-start;
-        padding-top: clamp(36px, 5.5vh, 64px);
-        scroll-padding-top: clamp(20px, 3vh, 36px);
-      }
-
-      #contact .section__inner {
-        width: 100%;
-        max-width: var(--section-max);
-        margin: 0 auto;
-        gap: 10px;
-        text-align: center;
-      }
-
-      #contact.section.app-view {
-        overflow-x: hidden;
-        overflow-y: auto;
-        overscroll-behavior-y: contain;
-        -webkit-overflow-scrolling: touch;
-        align-content: center;
+      #contact a.contact__link[href^="mailto"] {
+        text-decoration: none;
+        border-bottom: 0;
       }
 
       .footer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: var(--footer-h);
         position: fixed;
-        bottom: 0;
         left: 0;
         right: 0;
-        width: 100%;
-        z-index: 20;
+        bottom: 0;
+        z-index: 25;
+        padding: 8px var(--pad-x) 12px;
+        color: var(--text);
+        border-top: 0;
         background: var(--bg);
-        border-top: 1px solid rgba(0, 0, 0, 0.08);
       }
 
       .footer__inner {
-        font-size: clamp(11px, 0.85vw, 13px);
-        font-weight: 450;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        opacity: 0.64;
+        width: 100%;
+        margin: 0;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.18em;
+        text-transform: Capitalize;
         text-align: center;
       }
+
+      .a-stage {
+        position: relative;
+        inset: auto;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        justify-self: stretch;
+        align-self: center;
+        width: 100%;
+        min-width: 0;
+        pointer-events: none;
+        overflow: visible;
+      }
+
+      .a-mark {
+        position: relative;
+        display: block;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: 0;
+        outline: none;
+        background: var(--bg);
+        /* Fallback geometry until JS tightens the viewBox; keeps ~70% viewport with no side crop */
+        aspect-ratio: 1050 / 931.2;
+        width: min(
+          var(--a-mark-max-w),
+          calc(var(--a-mark-max-h) * 1050 / 931.2),
+          97vw
+        );
+        height: auto;
+        max-width: min(var(--a-mark-max-w), 97vw);
+        max-height: min(
+          var(--a-mark-max-h),
+          calc(
+            100svh - var(--nav-h) - var(--footer-h) -
+              clamp(100px, 16vh, 176px)
+          )
+        );
+        margin-inline: auto;
+        transform: translateX(var(--a-shift-x));
+      }
+
+      .a-outline {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: none !important;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      /*
+        Primary masking approach: CSS mask-image set in JS (data URL).
+        This is the most reliable cross-browser route (including WebKit/Safari).
+      */
+      .a-container {
+        width: 100%;
+        height: 100%;
+        background-color: var(--bg);
+        overflow: hidden;
+        position: relative;
+        display: block;
+        border: 0;
+        outline: none;
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: 50% 50%;
+        /* Slightly oversize mask in WebKit to hide 1px “frame” seam around masked video */
+        -webkit-mask-size: calc(100% + 2px) calc(100% + 2px);
+        -webkit-mask-mode: luminance;
+        mask-repeat: no-repeat;
+        mask-position: 50% 50%;
+        mask-size: calc(100% + 2px) calc(100% + 2px);
+        mask-mode: luminance;
+      }
+
+      .a-container::before {
+        content: "";
+        display: none;
+      }
+
+      /* Keep the A visible on light video frames */
+      .a-container::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.26);
+        pointer-events: none;
+      }
+
+      .a-video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 58%;
+        filter: contrast(1.12) brightness(0.9);
+        transform: translate3d(0, 0, 0);
+        display: block;
+        opacity: 1;
+        border: 0;
+        outline: none;
+        vertical-align: top;
+        -webkit-appearance: none;
+        appearance: none;
+      }
+
+      /*
+        Tablet+ / desktop: bottom-align copy + “A”; JS refines --hero-copy-align-lift
+        to the “A” left-foot line (see alignDecisionArchFoot in script).
+      */
+      @media (min-width: 521px) {
+        #hero .center {
+          align-content: stretch;
+        }
+
+        #hero .hero-grid {
+          align-items: end;
+        }
+
+        #hero .hero-copy {
+          align-self: end;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          height: 100%;
+          min-height: 0;
+          margin-top: 0;
+          margin-bottom: 0;
+          transform: translateY(
+            calc(-1 * var(--hero-copy-align-lift) + var(--hero-copy-shift-y))
+          );
+        }
+
+        #hero .hero-quote {
+          margin-top: 0;
+          flex: 0 0 auto;
+        }
+
+        #hero .a-stage {
+          align-self: end;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          align-items: flex-start;
+          height: 100%;
+          min-height: 0;
+        }
+      }
+
+      /* Narrow phones: slightly tighter “A” cap + centered copy */
+      @media (max-width: 520px) {
+        #hero .hero-grid {
+          gap: clamp(10px, 2.2vh, 18px);
+        }
+
+        #hero .a-mark {
+          max-height: min(
+            48vh,
+            calc(
+              100svh - var(--nav-h) - var(--footer-h) -
+                clamp(200px, 38svh, 280px)
+            )
+          );
+        }
+
+        #hero .hero-copy {
+          margin-top: clamp(6px, 1.5vh, 14px);
+        }
+
+        #hero .hero-quote {
+          margin-top: 0;
+          align-items: center;
+          text-align: center;
+        }
+      }
+
+      /* Desktop: “A” scaled for balance; shifted left toward the copy column */
+      @media (min-width: 861px) {
+        :root {
+          /* ~10% larger mark vs prior caps (still bounded by max-height below) */
+          --a-mark-max-w: calc(94vw * 1.06 * 0.98 * 1.06 * 1.06 * 1.1);
+          --a-mark-max-h: calc(81vh * 1.09 * 0.98 * 1.06 * 1.06 * 1.1);
+          --hero-copy-align-lift: clamp(104px, 17.5svh, 188px);
+        }
+
+        .a-stage {
+          justify-items: start;
+        }
+
+        #hero .hero-grid > .a-stage > .a-mark {
+          /* Full desktop: pull mark toward copy; laptops reset below */
+          margin-inline: -110px;
+          /* max() caps how far left; calc scales with width (clamp was ordered wrong before) */
+          transform: translateX(
+            calc(max(-228px, calc(-10vw - 56px)) - 108px)
+          );
+          width: min(
+            var(--a-mark-max-w),
+            calc(var(--a-mark-max-h) * 1050 / 931.2),
+            99vw
+          );
+          max-width: min(var(--a-mark-max-w), 99vw);
+          max-height: min(
+            var(--a-mark-max-h),
+            calc(
+              100svh - var(--nav-h) - var(--footer-h) -
+                var(--hero-center-pad-t) - var(--hero-center-pad-b) -
+                clamp(22px, 4vh, 58px)
+            )
+          );
+        }
+      }
+
+      @media (min-width: 861px) and (prefers-reduced-motion: reduce) {
+        #hero .hero-grid > .a-stage > .a-mark {
+          transform: translateX(
+            calc(max(-152px, calc(-7vw - 44px)) - 108px)
+          );
+        }
+      }
+
+      /*
+        Laptop / short-height desktop: vh-based caps read small — bump caps and
+        ease the vertical max so the “A” scales up without forcing shell overflow-y.
+      */
+      @media (min-width: 861px) and (max-height: 950px) and (min-height: 500px) {
+        :root {
+          --a-mark-max-w: calc(98vw * 1.06 * 0.98 * 1.08 * 1.06 * 1.1);
+          --a-mark-max-h: calc(90vh * 1.1 * 0.98 * 1.08 * 1.06 * 1.1);
+        }
+
+        #hero .hero-grid > .a-stage > .a-mark {
+          margin-inline: 0;
+          max-height: min(
+            var(--a-mark-max-h),
+            calc(
+              100svh - var(--nav-h) - var(--footer-h) -
+                var(--hero-center-pad-t) - var(--hero-center-pad-b) -
+                clamp(14px, 2.6vh, 46px)
+            )
+          );
+        }
+
+      }
+
+      /* Do not force-disable masking on mobile; JS handles fallback */
+
+      /* Desktop-wide: modest “A” presence (editorial, not dominant) */
+      @media (min-width: 1024px) {
+        :root {
+          --a-mark-max-w: calc(94vw * 1.06 * 0.98 * 1.12 * 1.06 * 1.1);
+          --a-mark-max-h: calc(81vh * 1.09 * 0.98 * 1.12 * 1.06 * 1.1);
+        }
+      }
+
+      @media (max-width: 420px) {
+        .nav__link {
+          letter-spacing: -0.004em;
+        }
+      }
+
+      @media (max-width: 860px) {
+        :root {
+          --hero-copy-inset: 0px;
+          --hero-copy-base-mt: clamp(24px, 4vh, 48px);
+          --hero-copy-offset: clamp(28px, 4svh, 50px);
+          --a-mark-max-w: min(calc(72vw * 1.12 * 0.96 * 1.06), 92vmin);
+          --a-mark-max-h: calc(62vh * 1.1 * 0.96 * 1.06);
+          --a-shift-x: -3%;
+        }
+
+        /* Phone / tablet stack: “A” on top, copy underneath (no desktop lift overlap) */
+        #hero .hero-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: minmax(0, 1fr) auto;
+          align-items: stretch;
+          align-content: stretch;
+          min-height: 0;
+          height: 100%;
+          max-height: 100%;
+          gap: clamp(12px, 2.8vh, 22px);
+        }
+
+        #hero .a-stage {
+          grid-row: 1;
+          grid-column: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          min-height: 0;
+          max-height: 100%;
+          align-self: stretch;
+          z-index: 1;
+        }
+
+        #hero .a-mark {
+          transform: translateX(var(--a-shift-x));
+          max-height: min(
+            var(--a-mark-max-h),
+            calc(
+              100svh - var(--nav-h) - var(--footer-h) -
+                clamp(14px, 5vh, 62px) -
+                clamp(120px, 32svh, 240px)
+            )
+          );
+        }
+
+        #hero .hero-copy {
+          grid-row: 2;
+          grid-column: 1;
+          display: block;
+          height: auto;
+          min-height: 0;
+          align-self: stretch;
+          justify-self: stretch;
+          margin-top: clamp(4px, 1.2vh, 12px);
+          margin-bottom: 0;
+          transform: none;
+          --hero-copy-align-lift: 0px;
+          --hero-copy-shift-y: 0px;
+          z-index: 2;
+        }
+
+        .hero-copy {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .nav {
+          gap: 14px;
+        }
+
+        .nav__links {
+          gap: 8px;
+          flex-wrap: wrap;
+          justify-content: flex-end;
+        }
+
+        /* Hero-only: keep home tab within the shell (no vertical scroll) */
+        .center {
+          padding-top: clamp(8px, 3vh, 40px);
+          padding-bottom: clamp(8px, 2.5vh, 28px);
+          align-content: stretch;
+          overflow: hidden;
+          min-height: 0;
+        }
+
+        #hero .center {
+          height: 100%;
+          max-height: 100%;
+        }
+
+        .hero-quote__title {
+          /* Tablet: keep headline distinct but not huge */
+          font-size: clamp(26px, 5.7vw, 33px);
+          line-height: 1.08;
+          font-weight: 380;
+          letter-spacing: -0.015em;
+          margin-bottom: clamp(14px, 2.6vh, 26px);
+        }
+
+        .hero-quote__sub,
+        .hero-quote__label {
+          font-size: 18px;
+          line-height: 1.44;
+          font-weight: 400;
+          letter-spacing: -0.01em;
+        }
+
+        .hero-quote__sub {
+          margin-bottom: 0.24em;
+        }
+
+        .hero-copy {
+          max-width: none;
+          padding-left: 0;
+        }
+
+        .about {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .about__image {
+          width: min(200px, 72%);
+          object-position: 50% 14%;
+        }
+
+        .model-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .problem-grid {
+          grid-template-columns: 1fr;
+        }
+
+        #work .section__inner {
+          width: 100%;
+          max-width: var(--section-max);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          gap: clamp(12px, 2.2vh, 20px);
+          padding-top: clamp(44px, 8.2vh, 68px);
+        }
+
+        #work .section__kicker {
+          flex-shrink: 0;
+          margin-top: clamp(12px, 2.5vh, 24px);
+        }
+
+        .section__inner {
+          width: 100%;
+          max-width: var(--section-max);
+        }
+
+        #work .problem-grid {
+          width: 100% !important;
+          max-width: var(--section-max);
+        }
+      }
+
+      /* Tablet-only refinements (keep layout system; improve composition) */
+      @media (min-width: 521px) and (max-width: 860px) {
+        /* Hero (tablet): keep banner composed (two-column, controlled A) */
+        #hero .hero-grid {
+          grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+          grid-template-rows: 1fr;
+          align-items: end;
+          align-content: stretch;
+          gap: clamp(18px, 3vw, 34px);
+        }
+
+        #hero .hero-copy {
+          grid-row: auto;
+          grid-column: 1;
+          width: min(460px, 100%);
+          margin: 0;
+          padding-left: 0;
+          padding-right: 0;
+          text-align: left;
+          justify-self: start;
+        }
+
+        #hero .a-stage {
+          grid-row: auto;
+          grid-column: 2;
+          justify-self: stretch;
+          justify-items: end;
+          align-self: end;
+        }
+
+        #hero .a-mark {
+          transform: translateX(calc(clamp(6px, 1.1vw, 14px) - 80px));
+          width: min(48vw, 556px);
+          max-width: min(48vw, 556px);
+          max-height: min(
+            55vh,
+            calc(100svh - var(--nav-h) - var(--footer-h) - clamp(148px, 20vh, 208px))
+          );
+        }
+
+        /* About: image reads intentional (not tiny); slight upper bias for cover crop */
+        .about {
+          gap: clamp(18px, 2.8vw, 36px);
+        }
+
+        .about__image {
+          width: min(460px, 78%);
+          max-height: 44vh;
+          object-position: 50% 14%;
+        }
+
+        /* About: keep copy comfortably readable on tablets */
+        .about .prose {
+          width: min(56ch, 100%);
+        }
+
+        /* Hero: keep copy from feeling too wide when stacked */
+        .hero-copy {
+          width: min(560px, 100%);
+          margin-left: auto;
+          margin-right: auto;
+          padding-right: 0;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .section.app-view {
+          padding-top: clamp(48px, 9.5vh, 84px);
+          padding-bottom: clamp(30px, 5.5vh, 54px);
+          padding-left: var(--pad-x);
+          padding-right: var(--pad-x);
+        }
+
+        .section {
+          padding-top: clamp(48px, 9.5vh, 84px);
+          padding-bottom: clamp(30px, 5.5vh, 54px);
+          padding-left: var(--pad-x);
+          padding-right: var(--pad-x);
+        }
+
+        /* About: room for tall portrait + iOS dynamic bars (svh/dvh); less top pad = more shell for photo */
+        #about.section.app-view {
+          overflow-x: hidden;
+          overflow-y: auto;
+          overscroll-behavior-y: contain;
+          -webkit-overflow-scrolling: touch;
+          padding-top: max(
+            env(safe-area-inset-top, 0px),
+            clamp(96px, 22svh, 200px)
+          );
+          scroll-padding-top: clamp(32px, 6vh, 60px);
+          padding-bottom: clamp(16px, 3.2vh, 32px);
+        }
+
+        #work .section__inner {
+          width: 100%;
+          max-width: none;
+          flex: 1 1 auto;
+          min-height: 0;
+          max-height: none;
+          overflow: visible;
+          /* Override .section--centered grid so “THE PROBLEM” isn’t vertically centered off-screen */
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          gap: clamp(14px, 2.8vh, 22px);
+          padding-top: clamp(56px, 11vh, 88px);
+          padding-bottom: clamp(16px, 3vh, 32px);
+        }
+
+        .section__inner {
+          min-height: 0;
+          max-height: 100%;
+          overflow: hidden;
+          text-align: center;
+        }
+
+        #work.section--centered .section__inner {
+          overflow: visible;
+          max-height: none;
+        }
+
+        .section--center .section__inner {
+          text-align: center;
+        }
+
+        #about.section--center .section__inner,
+        #about .section__inner {
+          text-align: left;
+          align-items: center;
+          height: auto;
+          max-height: none;
+          overflow: visible;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          gap: clamp(10px, 1.8vh, 16px);
+          padding-top: clamp(8px, 1.6vh, 16px);
+        }
+
+        .hero-copy {
+          padding-left: 0;
+          padding-right: 0;
+          width: 100%;
+          max-width: min(420px, 100%);
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .about {
+          width: 100%;
+          max-width: 100%;
+          align-items: center;
+          text-align: center;
+          gap: clamp(8px, 2vh, 14px);
+        }
+
+        #about .about {
+          text-align: left;
+        }
+
+        .about__content {
+          width: 100%;
+          max-width: 100%;
+          justify-items: center;
+          text-align: center;
+        }
+
+        #about .prose {
+          text-align: center;
+        }
+
+        #about .about__content {
+          justify-items: center;
+          text-align: center;
+        }
+
+        /*
+         * About photo (iPhone 12/13-class ~390×844): narrower width reduces vertical cover-crop
+         * on tall phone portraits; svh/dvh tracks visible viewport when the toolbar shows/hides.
+         */
+        #about {
+          --about-photo-h: clamp(320px, 70svh, 540px);
+        }
+
+        @supports (height: 100dvh) {
+          #about {
+            --about-photo-h: clamp(320px, min(70svh, 68dvh), 540px);
+          }
+        }
+
+        #about .about__image {
+          display: block;
+          box-sizing: border-box;
+          height: var(--about-photo-h);
+          min-height: min(360px, 52svh);
+          /* Narrower than 88vw / 0.75h: often switches cover to height-led scale → less top crop */
+          width: min(76vw, calc(0.58 * var(--about-photo-h)));
+          max-width: 100%;
+          max-height: none;
+          margin-inline: auto;
+          margin-top: clamp(12px, 2.2vh, 22px);
+          object-fit: cover;
+          object-position: 50% -39% !important;
+          -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+        }
+
+        .contact__emailWrap {
+          align-items: center;
+        }
+
+        /* Mobile: section kickers (THE PROBLEM / DA4 / CONTACT) share one scale */
+        #work .section__kicker,
+        #model .section__kicker,
+        #contact .section__kicker {
+          font-size: clamp(14px, 3vw, 16px);
+          letter-spacing: 0.18em;
+        }
+
+        #model .section__kicker,
+        #contact .section__kicker {
+          margin: 0 0 clamp(8px, 1.6vh, 12px);
+        }
+
+        #work .section__kicker {
+          flex-shrink: 0;
+          margin-top: clamp(4px, 1.2vh, 12px);
+          margin-bottom: clamp(10px, 2vh, 16px);
+          scroll-margin-top: clamp(20px, 4vh, 32px);
+        }
+
+        .prose {
+          font-size: clamp(14px, 3vw, 16px);
+          line-height: 1.48;
+          font-weight: 420;
+          text-align: center;
+        }
+
+        .prose p + p {
+          margin-top: 10px;
+        }
+
+        .about__name {
+          font-size: clamp(22px, 5.2vw, 28px);
+          line-height: 1.14;
+          font-weight: 600;
+        }
+
+        .about__role {
+          font-size: clamp(15px, 3.6vw, 17px);
+          line-height: 1.52;
+          font-weight: 400;
+          margin-top: 8px;
+        }
+
+        .about__role .tm {
+          font-weight: 400;
+        }
+
+        .about .prose {
+          font-size: clamp(16px, 3.8vw, 18px);
+          line-height: 1.66;
+          font-weight: 400;
+          margin-top: clamp(14px, 2.4vh, 22px);
+        }
+
+        .about .prose p + p {
+          margin-top: 1.1em;
+        }
+
+        .model-item__title {
+          font-size: clamp(14px, 3vw, 16px);
+          line-height: 1.38;
+          font-weight: 460;
+        }
+
+        .model-item__desc {
+          font-size: clamp(14px, 3vw, 16px);
+          line-height: 1.38;
+          font-weight: 500;
+          margin-top: 6px;
+        }
+
+        .contact__item {
+          font-size: clamp(14px, 3vw, 16px);
+          line-height: 1.38;
+          font-weight: 500;
+        }
+
+        .contact__sub {
+          font-size: clamp(14px, 3vw, 16px);
+          line-height: 1.38;
+          margin-top: 10px;
+        }
+
+        .footer__inner {
+          font-size: clamp(14px, 1.8vw, 15px);
+          letter-spacing: 0.16em;
+        }
+
+        .model-grid {
+          row-gap: clamp(8px, 1.8vh, 14px);
+        }
+
+        .hero {
+          height: 100%;
+          max-width: 100%;
+          overflow-x: hidden;
+          overflow-y: hidden;
+        }
+
+        :root {
+          --nav-h: 58px;
+          --a-mark-max-w: min(calc(60vw * 1.12 * 0.95 * 1.06), 83vmin);
+          --a-mark-max-h: min(calc(56vh * 1.1 * 0.95 * 1.06), 66vh);
+          /* Center the hero “A” on mobile (desktop keeps slight shift) */
+          --a-shift-x: 0%;
+        }
+
+        .nav {
+          position: fixed;
+          top: 0;
+          z-index: 30;
+          background: var(--bg);
+          padding: 14px var(--nav-pad-x) 14px var(--nav-pad-left);
+          min-height: 58px;
+        }
+
+        .nav__links {
+          display: none;
+        }
+
+        .nav__toggle {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          padding: 18px 20px 18px 22px;
+          margin: -10px -12px -10px 0;
+          font-size: 14px;
+        }
+
+        .nav__toggleLines {
+          width: 32px;
+          height: 16px;
+          display: inline-grid;
+          align-content: space-between;
+        }
+
+        .nav__toggleLines span {
+          height: 2px;
+          border-radius: 1px;
+          background: var(--text);
+          display: block;
+          transition:
+            transform var(--dur-hamburger) var(--ease-hamburger),
+            opacity calc(var(--dur-hamburger) * 0.88) var(--ease-hamburger);
+          transform-origin: 50% 50%;
+        }
+
+        .nav__panel {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 100%;
+          width: 100%;
+          height: auto;
+          background: var(--bg);
+          padding: 20px;
+          border: 0;
+          transform: translateY(-10px);
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+          transition:
+            transform var(--dur) var(--ease-out),
+            opacity var(--dur) var(--ease-out),
+            visibility 0s linear var(--dur);
+          display: grid;
+          gap: 20px;
+          justify-items: start;
+          text-align: left;
+        }
+
+        .nav--open .nav__panel {
+          transform: translateY(0);
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+          transition:
+            transform var(--dur) var(--ease-out),
+            opacity var(--dur) var(--ease-out),
+            visibility 0s;
+        }
+
+        .nav__panel a {
+          font-size: 16px;
+          font-weight: 420;
+          letter-spacing: 0.02em;
+          text-transform: none;
+          opacity: 1;
+          width: 100%;
+          text-align: left;
+        }
+
+        /* Hamburger -> X */
+        .nav--open .nav__toggleLines span:nth-child(1) {
+          transform: translateY(7px) rotate(45deg);
+        }
+
+        .nav--open .nav__toggleLines span:nth-child(2) {
+          transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* Shell already clears fixed nav — keep padding small so hero fits the viewport */
+        .center {
+          padding-top: clamp(28px, 5vh, 44px);
+          padding-bottom: clamp(8px, 2vh, 16px);
+        }
+
+        .hero-quote {
+          gap: 0;
+          margin-top: 0;
+        }
+
+        .hero-quote__title {
+          font-size: clamp(26px, 5.5vw, 34px);
+          line-height: 1.14;
+          font-weight: 360;
+          letter-spacing: -0.015em;
+          max-width: min(24ch, 92vw);
+          margin-inline: auto;
+          margin-bottom: clamp(10px, 2vh, 18px);
+        }
+
+        .hero-quote__sub,
+        .hero-quote__label {
+          font-size: clamp(15px, 3.8vw, 17px);
+          line-height: 1.44;
+          font-weight: 400;
+          letter-spacing: -0.01em;
+        }
+
+        .hero-quote__sub {
+          margin-bottom: 0.24em;
+        }
+
+        .hero-quote__label {
+          font-weight: 400;
+        }
+
+        .work__line {
+          font-size: clamp(14px, 3vw, 16px);
+          line-height: 1.48;
+        }
+
+        /* Work: scrollable — balance top/bottom rhythm (avoid huge top / crushed bottom) */
+        #work.section {
+          align-content: flex-start;
+          padding: clamp(38px, 7.8vh, 68px) var(--pad-x) clamp(20px, 3.5vh, 36px);
+        }
+
+        /* Work: one column on mobile (read top → bottom) */
+        #work .problem-grid {
+          grid-template-columns: 1fr;
+          column-gap: 0;
+          row-gap: var(--work-block);
+          align-items: stretch;
+          width: 100%;
+          max-width: 100%;
+          margin-inline: auto;
+          min-height: 0;
+          overflow: visible;
+          text-align: center;
+        }
+
+        #work {
+          --work-stack: clamp(10px, 1.55vh, 14px);
+          --work-block: clamp(18px, 2.4vh, 26px);
+        }
+
+        #work .problem-col {
+          gap: var(--work-block);
+          align-items: center;
+        }
+
+        #work .work__line,
+        #work .work__list li {
+          font-size: clamp(14px, 3vw, 16px);
+          line-height: 1.55;
+        }
+
+        .a-mark {
+          max-width: min(var(--a-mark-max-w), 94vw);
+          /* Share the hero column with headline + two lines; stay within the flex row */
+          max-height: min(
+            var(--a-mark-max-h),
+            52vh,
+            100%,
+            calc(
+              100dvh - var(--nav-h) - var(--footer-h) -
+                clamp(172px, 39svh, 286px)
+            )
+          );
+        }
+
+        .a-video {
+          object-position: 50% 50%;
+        }
+
+        /* Same specificity as base #work.section.app-view — rebalance top padding on small screens */
+        #work.section.app-view {
+          padding-top: clamp(52px, 11vh, 88px);
+          scroll-padding-top: clamp(32px, 6.5vh, 52px);
+        }
+      }
+
+      /* Short phones: Work scrolls — keep rhythm only (no aggressive squeeze) */
+      @media (max-width: 520px) and (max-height: 720px) {
+        #work .work__line,
+        #work .work__list li {
+          line-height: 1.5;
+        }
+      }
+
+      /* Breakpoint alignment: mobile < 768, small mobile < 480 */
+      @media (max-width: 767px) {
+        .hero-quote__title {
+          max-width: min(26ch, 92vw);
+        }
+
+        .section__kicker {
+          font-weight: 420;
+        }
+
+        .prose {
+          font-weight: 420;
+          line-height: 1.5;
+        }
+
+        .about .prose {
+          font-weight: 400;
+          line-height: 1.68;
+        }
+
+        .work__line {
+          font-weight: 420;
+          line-height: 1.55;
+        }
+
+        #work .work__line,
+        #work .work__list li {
+          font-weight: 420;
+          line-height: 1.5;
+        }
+
+        .about__name {
+          font-weight: 600;
+          letter-spacing: -0.01em;
+          line-height: 1.2;
+        }
+
+        .about__role {
+          font-weight: 400;
+          letter-spacing: 0.032em;
+        }
+
+        .about__role .tm {
+          font-weight: 400;
+        }
+
+        .model-item__title {
+          font-weight: 460;
+          letter-spacing: -0.008em;
+          line-height: 1.32;
+        }
+
+        .model-item__desc {
+          font-weight: 420;
+          line-height: 1.45;
+        }
+
+        .contact__item {
+          font-weight: 420;
+        }
+
+        .contact__sub {
+          font-weight: 420;
+          line-height: 1.35;
+        }
+
+        .footer__inner {
+          font-weight: 450;
+          letter-spacing: 0.14em;
+        }
+      }
+
+      @media (max-width: 479px) {
+        .hero-quote__title {
+          max-width: min(24ch, 92vw);
+        }
+      }
+
+
+      /*----- NEW ADDED CODE CLIENT PROVIDED ABOUT DETAILS -----*/
+       /* ===================================================
+   ABOUT SECTION ONLY
+   =================================================== */
+
+#about {
+    padding-top: 80px;
+    box-sizing: border-box;
+}
+
+@media (min-width: 992px) {
+
+    #about .section__inner {
+        height: calc(100vh - 80px);
+        display: flex;
+        align-items: stretch;
+    }
+
+    #about .about {
+        display: grid;
+        grid-template-columns: minmax(360px, 420px) minmax(0, 1fr);
+        gap: 80px;
+        width: 100%;
+        height: 100%;
+        align-items: start;
+    }
+
+    /* Left Image */
+    #about .about__image {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        align-self: start;
+
+        position: sticky;
+        top: 0;
+    }
+
+    /* Right Content */
+    #about .about__content {
+        min-width: 0;
+        min-height: 0;
+        padding-top:50px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-right: 24px;
+    }
+
+    /* Scrollbar */
+
+    #about .about__content::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    #about .about__content::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    #about .about__content::-webkit-scrollbar-thumb {
+        background: rgba(255,255,255,.25);
+        border-radius: 20px;
+    }
+
+    #about .about__content::-webkit-scrollbar-thumb:hover {
+        background: rgba(255,255,255,.45);
+    }
+
+    #about .prose {
+        margin-bottom: 40px;
+    }
+
+    #about .prose p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 991px) {
+
+    #about {
+        padding-top: 40px;
+    }
+
+    #about .section__inner {
+        height: auto;
+    }
+
+    #about .about {
+        display: block;
+    }
+
+    #about .about__image {
+        position: static;
+        width: 100%;
+        margin-bottom: 32px;
+    }
+
+    #about .about__content {
+        overflow: visible;
+        padding-right: 0;
+    }
+}
+
+
+      
     </style>
   </head>
+
   <body>
-    <!-- Content remains unchanged in this update -->
+    <!-- Mask is generated in JS via CSS mask-image (no inline defs needed) -->
+
+    <header class="nav" aria-label="Top navigation">
+      <div class="nav__inner">
+        <a class="nav__brand" href="/" aria-label="Atelier Livianne home">
+          <img
+            class="nav__brandLogo"
+            src="Group 13.png"
+            alt="Atelier Livianne"
+            decoding="async"
+          />
+        </a>
+
+        <button
+          class="nav__toggle"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+        >
+          <span class="nav__toggleLines" aria-hidden="true">
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+
+        <nav class="nav__links" aria-label="Primary">
+          <a class="nav__link" href="#about">About</a>
+          <a class="nav__link" href="#work">Work</a>
+          <a class="nav__link" href="#model">Model</a>
+          <a class="nav__link" href="#contact">Contact</a>
+        </nav>
+
+        <nav id="mobileMenu" class="nav__panel" aria-label="Mobile menu">
+          <a class="nav__link" href="#about">About</a>
+          <a class="nav__link" href="#work">Work</a>
+          <a class="nav__link" href="#model">Model</a>
+          <a class="nav__link" href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="app-shell" id="appShell" aria-label="Page content">
+    <main
+      id="hero"
+      class="hero app-view is-active"
+      aria-label="Hero"
+      aria-hidden="false"
+    >
+      <section class="center" aria-label="Brand hero">
+        <div class="hero-grid">
+          <div class="hero-copy" aria-label="Hero copy">
+            <div class="hero-quote" aria-label="Quote">
+              <h1 class="hero-quote__title">
+                <span class="hero-quote__line hero-quote__line--headline1"
+                  >Decisions don&rsquo;t break</span
+                >
+                <span class="hero-quote__line hero-quote__line--next"
+                  >at the moment they are made.</span
+                >
+              </h1>
+              <p class="hero-quote__sub">They break long before.</p>
+              <p class="hero-quote__label">
+                Decision Architecture<span class="tm">™</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="a-stage" aria-label="Video-masked logo mark">
+            <div class="a-mark" aria-hidden="true">
+              <svg
+                class="a-outline"
+                viewBox="0 0 1050 931.2"
+                xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="xMidYMid meet"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M524,125.3L524,125.3l180,333.1c4.4,8.1,3.3,17.7-2.8,24.9h128.4 l-33.4-13.8c-11.4-4.7-20.5-12.8-25.6-22.7L537.5,0l-50.1,110.9 l4.9-0.5C505.6,108.9,518.4,114.9,524,125.3z"
+                  fill="none"
+                  stroke="rgba(0,0,0,0.75)"
+                  stroke-width="2"
+                  vector-effect="non-scaling-stroke"
+                />
+                <path
+                  d="M852.5,588.2c-68.4,19.2-164.7,20.4-221.5-69.5L488,239.3 c-25.4-57.3-98.1-125.5-214.7-61.2c66.3-21.3,105.9,21.5,121.7,52.2 l19.9,37.1l-76.4,169.3c-7.8,17-21.9,31.4-40.1,40.9l-9.5,5v1.1 c25,0,95.9,0,120.9,0v-1.1l-26.3-8.2c-9.8-3.1-14.8-12.5-11-20.8 l64.9-144l1,1.8c26.3,49.1,105.5,200.9,127.6,230.1 c32.3,42.6,79.2,67.1,139.4,72.8c13.9,1.3,27.8,1.7,41.3,1.2 c0,0,0,0,0,0c37.5-1.4,73.2-9.9,106.6-25.2 C854.5,589.7,853.8,587.8,852.5,588.2z"
+                  fill="none"
+                  stroke="rgba(0,0,0,0.75)"
+                  stroke-width="2"
+                  vector-effect="non-scaling-stroke"
+                />
+              </svg>
+
+              <div class="a-container" id="aContainer" aria-hidden="true">
+                <video
+                  class="a-video"
+                  id="heroVideo"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="auto"
+                >
+                  <source src="hero.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <section
+      id="work"
+      aria-label="Work section"
+      class="section section--center section--centered app-view"
+      aria-hidden="true"
+    >
+      <div class="section__inner">
+        <h2 class="section__kicker">THE PROBLEM</h2>
+        <div class="prose problem-grid" aria-label="Work copy">
+          <div class="problem-col" aria-label="Column 1">
+            <div class="problem-block">
+              <p class="work__line">Nothing appears broken.</p>
+              <p class="work__line">Decisions are made.</p>
+              <p class="work__line">Work continues.</p>
+              <p class="work__line">Teams stay aligned.</p>
+              <p class="work__line">And yet - execution slows.</p>
+              <p class="work__line">Not abruptly.</p>
+              <p class="work__line">Gradually.</p>
+            </div>
+
+            <div class="problem-block">
+              <p class="work__line">Decisions start to slow.</p>
+              <p class="work__line">Ownership becomes unclear.</p>
+              <p class="work__line">Flow gets interrupted.</p>
+              <p class="work__line">Decisions stall.</p>
+            </div>
+          </div>
+
+          <div class="problem-col" aria-label="Column 2">
+            <div class="problem-block">
+              <p class="work__line">This is rarely identified correctly.</p>
+              <p class="work__line">It is described as:</p>
+              <ul class="work__list" aria-label="Symptoms">
+                <li>communication</li>
+                <li>alignment</li>
+                <li>meetings</li>
+              </ul>
+              <p class="work__line">But these are symptoms.</p>
+            </div>
+
+            <div class="problem-block">
+              <p class="work__line">What actually breaks</p>
+              <p class="work__line">is the decision flow.</p>
+
+              <p class="work__line">Most organizations rely on:</p>
+              <ul class="work__list" aria-label="Fallbacks">
+                <li>coordination</li>
+                <li>experience</li>
+                <li>involvement</li>
+              </ul>
+              <p class="work__line">At scale - this creates friction.</p>
+
+              <p class="work__line">Execution does not collapse.</p>
+              <p class="work__line">It fragments.</p>
+
+              <p class="work__line">This is where I work.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section
+  id="about"
+  aria-label="About"
+  class="section section--center app-view"
+  aria-hidden="true"
+>
+  <div class="section__inner">
+    <div class="about">
+      <img class="about__image" src="about.jpg" alt="" decoding="async" />
+      <div class="about__content">
+        <h2 class="about__name">Agnieszka Filipkowska</h2>
+
+        <p class="about__role">
+          Founder of Decision Architecture<span class="tm">™</span>
+        </p>
+
+        <div class="prose">
+          <p>
+            Decision Architecture<span class="tm">™</span> was developed from a
+            simple observation: organizations rarely struggle because they lack
+            capable people. They struggle because decisions gradually lose
+            clarity, ownership, and momentum as they move through the business.
+          </p>
+
+          <p>
+            The consequences are rarely immediate. They emerge quietly through
+            fragmented accountability, delayed decisions, competing priorities,
+            leadership blind spots, and execution that no longer reflects the
+            organization's true capability.
+          </p>
+
+          <p>
+            I work with organizations where this structural drift begins to
+            appear beneath operational stability.
+          </p>
+
+          <p>
+            My work is analytical, discreet, and intentionally non-disruptive.
+            Rather than changing how people communicate, I examine the
+            architecture behind decision-making itself - identifying where
+            decisions lose force, why execution begins to diverge from
+            leadership intent, and how clarity, ownership, and decision flow
+            can be restored.
+          </p>
+
+          <p>
+            Decision Architecture<span class="tm">™</span> is an independent
+            discipline focused on the structure, movement, and integrity of
+            organizational decisions. Its purpose is to strengthen execution
+            before organizational capability begins to erode.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section
+      id="model"
+      aria-label="Model"
+      class="section app-view"
+      aria-hidden="true"
+    >
+      <div class="section__inner">
+        <h2 class="section__kicker">DA4<span class="tm">™</span> MODEL</h2>
+        <div class="model-grid">
+          <div class="model-item">
+            <h3 class="model-item__title">Decision Ownership</h3>
+            <p class="model-item__desc">Authority is explicit</p>
+          </div>
+          <div class="model-item">
+            <h3 class="model-item__title">Decision Flow</h3>
+            <p class="model-item__desc">Movement is defined</p>
+          </div>
+          <div class="model-item">
+            <h3 class="model-item__title">Decision Escalation</h3>
+            <p class="model-item__desc">Stalled decisions become visible</p>
+          </div>
+          <div class="model-item">
+            <h3 class="model-item__title">Decision Execution</h3>
+            <p class="model-item__desc">Decisions convert into action</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="contact"
+      aria-label="Contact"
+      class="section app-view"
+      aria-hidden="true"
+    >
+      <div class="section__inner">
+        <h2 class="section__kicker">CONTACT</h2>
+        <p class="contact__item">
+          <span class="contact__emailWrap">
+            <a class="contact__link" href="mailto:agnes@atelierlivianne.com"
+              >agnes@atelierlivianne.com</a
+            >
+          </span>
+        </p>
+        <p class="contact__item contact__sub">
+          <a
+            class="contact__link"
+            href="https://www.linkedin.com/in/agnieszka-filipkowska-aba127388"
+            aria-label="LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+        </p>
+      </div>
+    </section>
+    </div>
+
+    <footer class="footer" aria-label="Footer">
+      <div class="footer__inner">© Atelier Livianne</div>
+    </footer>
+
+    <script>
+      (() => {
+        try {
+          if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+        } catch (_) {}
+
+        const video = document.getElementById("heroVideo");
+        const container = document.getElementById("aContainer");
+        const navEl = document.querySelector(".nav");
+        const navToggle = document.querySelector(".nav__toggle");
+
+        const reduceMotion =
+          typeof window !== "undefined" &&
+          "matchMedia" in window &&
+          window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        const VIEW_IDS = new Set(["hero", "work", "about", "model", "contact"]);
+        const parseViewId = () => {
+          let raw = (location.hash || "").replace(/^#/, "");
+          if (raw && !VIEW_IDS.has(raw)) {
+            try {
+              history.replaceState(null, "", "#hero");
+            } catch (_) {}
+            raw = "hero";
+          }
+          if (!raw || raw === "home") return "hero";
+          return VIEW_IDS.has(raw) ? raw : "hero";
+        };
+
+        /* Align “Decision Architecture™” to the “A” left-foot line (all viewports) */
+        const alignDecisionArchFoot = () => {
+          const hero = document.getElementById("hero");
+          const mark = document.querySelector("#hero .a-mark");
+          const label = document.querySelector("#hero .hero-quote__label");
+          const copy = document.querySelector("#hero .hero-copy");
+          if (!hero || !mark || !label || !copy) return;
+          if (!hero.classList.contains("is-active")) return;
+
+          /* Stacked phone/tablet: keep copy under the “A” (no desktop foot-align lift) */
+          if (window.matchMedia("(max-width: 860px)").matches) {
+            copy.style.setProperty("--hero-copy-align-lift", "0px");
+            return;
+          }
+
+          copy.style.setProperty("--hero-copy-align-lift", "0px");
+          const markR = mark.getBoundingClientRect();
+          if (markR.height < 48) return;
+
+          const footRatio =
+            parseFloat(
+              getComputedStyle(document.documentElement).getPropertyValue(
+                "--hero-a-left-foot-ratio"
+              )
+            ) || 0.15;
+          const nudge =
+            parseFloat(
+              getComputedStyle(document.documentElement).getPropertyValue(
+                "--hero-label-foot-nudge"
+              )
+            ) || 0;
+
+          const extraLift =
+            parseFloat(
+              getComputedStyle(document.documentElement).getPropertyValue(
+                "--hero-label-extra-lift"
+              )
+            ) || 0;
+          const shiftY =
+            parseFloat(
+              getComputedStyle(document.documentElement).getPropertyValue(
+                "--hero-copy-shift-y"
+              )
+            ) || 0;
+
+          const footY = markR.bottom - markR.height * footRatio;
+          const labelR = label.getBoundingClientRect();
+          /* Subtract shiftY so --hero-copy-shift-y is not cancelled by auto-lift */
+          const lift = Math.max(
+            0,
+            Math.min(
+              320,
+              Math.round(labelR.bottom - footY + nudge + extraLift - shiftY)
+            )
+          );
+          copy.style.setProperty("--hero-copy-align-lift", `${lift}px`);
+        };
+
+        let alignFootTimer = 0;
+        const scheduleAlignDecisionArchFoot = () => {
+          window.clearTimeout(alignFootTimer);
+          alignFootTimer = window.setTimeout(() => {
+            requestAnimationFrame(alignDecisionArchFoot);
+          }, 80);
+        };
+
+        window.addEventListener("resize", scheduleAlignDecisionArchFoot);
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready
+            .then(scheduleAlignDecisionArchFoot)
+            .catch(() => {});
+        }
+
+        const showView = (id) => {
+          const safe = VIEW_IDS.has(id) ? id : "hero";
+          document.querySelectorAll(".app-view").forEach((el) => {
+            const on = el.id === safe;
+            el.classList.toggle("is-active", on);
+            el.setAttribute("aria-hidden", on ? "false" : "true");
+          });
+          window.scrollTo(0, 0);
+          if (navEl) navEl.classList.remove("nav--open");
+          if (navToggle) {
+            navToggle.setAttribute("aria-expanded", "false");
+            navToggle.setAttribute("aria-label", "Open menu");
+          }
+          if (video) {
+            try {
+              if (safe === "hero" && !reduceMotion) void video.play();
+              else video.pause();
+            } catch (_) {}
+          }
+          if (safe === "hero") scheduleAlignDecisionArchFoot();
+        };
+        const syncRoute = () => {
+          showView(parseViewId());
+        };
+
+        document.addEventListener(
+          "click",
+          (e) => {
+            const a = e.target.closest("a[href^='#']");
+            if (!a) return;
+            const raw = (a.getAttribute("href") || "").replace(/^#/, "");
+            const id = !raw || raw === "home" ? "hero" : raw;
+            if (!VIEW_IDS.has(id)) return;
+            e.preventDefault();
+            const next = id === "hero" ? "#hero" : "#" + id;
+            history.pushState(null, "", next);
+            showView(id);
+          },
+          true
+        );
+        window.addEventListener("popstate", syncRoute);
+        window.addEventListener("hashchange", syncRoute);
+        syncRoute();
+
+        /* Subtle slow-motion (refined); full speed when reduced-motion */
+        const TARGET_RATE = reduceMotion ? 1 : 0.32;
+
+        // Build a CSS mask image from the exact SVG "A" paths.
+        // This avoids brittle `clip-path: url(#id)` support on HTML elements (esp. Safari).
+        const aPathRight =
+          "M524,125.3L524,125.3l180,333.1c4.4,8.1,3.3,17.7-2.8,24.9h128.4 l-33.4-13.8c-11.4-4.7-20.5-12.8-25.6-22.7L537.5,0l-50.1,110.9 l4.9-0.5C505.6,108.9,518.4,114.9,524,125.3z";
+
+        const aPathLeft =
+          "M852.5,588.2c-68.4,19.2-164.7,20.4-221.5-69.5L488,239.3 c-25.4-57.3-98.1-125.5-214.7-61.2c66.3-21.3,105.9,21.5,121.7,52.2 l19.9,37.1l-76.4,169.3c-7.8,17-21.9,31.4-40.1,40.9l-9.5,5v1.1 c25,0,95.9,0,120.9,0v-1.1l-26.3-8.2c-9.8-3.1-14.8-12.5-11-20.8 l64.9-144l1,1.8c26.3,49.1,105.5,200.9,127.6,230.1 c32.3,42.6,79.2,67.1,139.4,72.8c13.9,1.3,27.8,1.7,41.3,1.2 c0,0,0,0,0,0c37.5-1.4,73.2-9.9,106.6-25.2 C854.5,589.7,853.8,587.8,852.5,588.2z";
+
+        const maskSvg = `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 931.2" preserveAspectRatio="xMidYMid meet">
+  <path d="${aPathRight}" fill="#fff"/>
+  <path d="${aPathLeft}" fill="#fff"/>
+</svg>`.trim();
+
+        const maskUrl =
+          'url("data:image/svg+xml;charset=utf-8,' +
+          encodeURIComponent(maskSvg) +
+          '")';
+
+        if (container) {
+          container.style.webkitMaskImage = maskUrl;
+          container.style.maskImage = maskUrl;
+        }
+
+        // Tighten the SVG/mask viewBox to remove unwanted side whitespace.
+        // This uses the real path bounds, so the "A" fills cleanly without extra margins.
+        try {
+          const ns = "http://www.w3.org/2000/svg";
+          const tmp = document.createElementNS(ns, "svg");
+          tmp.setAttribute("viewBox", "0 0 1050 931.2");
+          tmp.setAttribute("xmlns", ns);
+          tmp.style.position = "absolute";
+          tmp.style.width = "0";
+          tmp.style.height = "0";
+          tmp.style.overflow = "hidden";
+          tmp.style.left = "-9999px";
+          tmp.style.top = "-9999px";
+
+          const p1 = document.createElementNS(ns, "path");
+          p1.setAttribute("d", aPathRight);
+          const p2 = document.createElementNS(ns, "path");
+          p2.setAttribute("d", aPathLeft);
+          tmp.append(p1, p2);
+
+          document.body.appendChild(tmp);
+          const b = tmp.getBBox();
+          document.body.removeChild(tmp);
+
+          const pad = 2; // tiny breathing room to avoid stroke clipping
+          const padBottom = 5; // small mask pad; keeps foot tight for label alignment
+          const x = Math.max(0, b.x - pad);
+          const y = Math.max(0, b.y - pad);
+          const w = Math.min(1050 - x, b.width + pad * 2);
+          const h = Math.min(931.2 - y, b.height + pad + padBottom);
+          const vb = `${x} ${y} ${w} ${h}`;
+
+          const outlineSvg = document.querySelector(".a-outline");
+          if (outlineSvg) outlineSvg.setAttribute("viewBox", vb);
+
+          const aMark = document.querySelector(".a-mark");
+          if (aMark) aMark.style.aspectRatio = `${w} / ${h}`;
+
+          scheduleAlignDecisionArchFoot();
+
+          const tightMaskSvg = `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="${vb}" preserveAspectRatio="xMidYMid meet">
+  <path d="${aPathRight}" fill="#fff"/>
+  <path d="${aPathLeft}" fill="#fff"/>
+</svg>`.trim();
+
+          const tightMaskUrl =
+            'url("data:image/svg+xml;charset=utf-8,' +
+            encodeURIComponent(tightMaskSvg) +
+            '")';
+
+          if (container) {
+            container.style.webkitMaskImage = tightMaskUrl;
+            container.style.maskImage = tightMaskUrl;
+          }
+        } catch (_) {
+          // If getBBox isn't available, keep the default viewBox.
+        }
+
+        scheduleAlignDecisionArchFoot();
+
+        // Mobile hamburger
+        if (navEl && navToggle) {
+          const setExpanded = (expanded) => {
+            navToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+            navEl.classList.toggle("nav--open", expanded);
+            navToggle.setAttribute("aria-label", expanded ? "Close menu" : "Open menu");
+          };
+
+          navToggle.addEventListener("click", () => {
+            const expanded = navToggle.getAttribute("aria-expanded") === "true";
+            setExpanded(!expanded);
+          });
+
+          // Close after selecting a link
+          navEl.addEventListener("click", (e) => {
+            const t = e.target;
+            if (t && t.matches && t.matches('a[href^="#"]')) {
+              setExpanded(false);
+            }
+          });
+        }
+
+        // If mask isn't supported, at least avoid a "blank" block
+        try {
+          const computed = container ? getComputedStyle(container) : null;
+          const hasMask =
+            computed &&
+            ((computed.webkitMaskImage && computed.webkitMaskImage !== "none") ||
+              (computed.maskImage && computed.maskImage !== "none"));
+          if (!hasMask && container) {
+            container.style.webkitMaskImage = "none";
+            container.style.maskImage = "none";
+          }
+        } catch (_) {}
+
+        // Demo-friendly video boot:
+        // - Use local `hero.mp4` if present
+        // - Otherwise fall back to a remote MP4 for immediate demo
+        const FALLBACK_MP4 =
+          "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4";
+
+        if (video) {
+          if (reduceMotion) {
+            video.addEventListener(
+              "canplay",
+              () => {
+                try {
+                  video.pause();
+                } catch (_) {}
+              },
+              { once: true }
+            );
+          }
+
+          const applyRate = () => {
+            try {
+              video.playbackRate = TARGET_RATE;
+            } catch (_) {
+              // no-op: some browsers may ignore until play starts
+            }
+          };
+
+          applyRate();
+          video.addEventListener("loadedmetadata", applyRate);
+          video.addEventListener("play", applyRate);
+
+          const tryPlay = async () => {
+            try {
+              await video.play();
+            } catch (_) {
+              // Autoplay policies can block if muted isn't respected; keep muted and continue.
+            }
+          };
+
+          video.addEventListener("canplay", tryPlay, { once: true });
+
+          video.addEventListener(
+            "error",
+            () => {
+              const currentSrc = video.currentSrc || "";
+              if (currentSrc.includes("mdn.mozilla.net")) return;
+
+              video.removeAttribute("src");
+              const source = video.querySelector("source");
+              if (source) source.src = FALLBACK_MP4;
+              video.load();
+              applyRate();
+              void tryPlay();
+            },
+            { once: false }
+          );
+
+          void tryPlay();
+        }
+      })();
+    </script>
   </body>
 </html>
