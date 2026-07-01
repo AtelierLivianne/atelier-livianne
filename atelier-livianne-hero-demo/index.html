@@ -2111,74 +2111,164 @@
    =================================================== */
 
 #about {
-    padding-top: 80px;
+    padding-top: clamp(56px, 7vh, 80px);
+    padding-bottom: clamp(40px, 6vh, 72px);
     box-sizing: border-box;
+}
+
+#about.section.app-view {
+    align-content: flex-start;
+    overflow-y: auto;
 }
 
 @media (min-width: 992px) {
 
     #about .section__inner {
-        height: calc(100vh - 80px);
+        width: min(1120px, 100%);
+        max-width: 1120px;
+        min-height: 100%;
+        height: auto;
+        max-height: none;
         display: flex;
-        align-items: stretch;
+        align-items: center;
+        justify-content: center;
+        overflow: visible;
     }
 
     #about .about {
         display: grid;
-        grid-template-columns: minmax(360px, 420px) minmax(0, 1fr);
-        gap: 80px;
+        grid-template-columns: minmax(300px, 360px) minmax(0, 1fr);
+        gap: clamp(32px, 4vw, 48px);
         width: 100%;
-        height: 100%;
-        align-items: start;
+        max-width: 1120px;
+        height: auto;
+        align-items: center;
+        justify-content: center;
     }
 
     /* Left Image */
     #about .about__image {
         display: block;
         width: 100%;
-        height: auto;
+        height: clamp(400px, 46vh, 480px);
+        max-height: 480px;
         margin: 0;
-        align-self: start;
-
-        position: sticky;
-        top: 0;
+        align-self: center;
+        object-fit: cover;
+        object-position: 50% 14%;
     }
 
     /* Right Content */
     #about .about__content {
         min-width: 0;
-        min-height: 0;
-        padding-top:63px;
-        overflow-y: auto;
+        width: 100%;
+        min-height: auto;
+        padding-top: 0;
+        padding-right: 0;
+        overflow-y: visible;
         overflow-x: hidden;
-        padding-right: 24px;
+        align-content: center;
     }
 
-    /* Scrollbar */
-
-    #about .about__content::-webkit-scrollbar {
-        width: 6px;
-    }
-
-    #about .about__content::-webkit-scrollbar-track {
-        background: transparent;
-    }
-
-    #about .about__content::-webkit-scrollbar-thumb {
-        background: rgba(255,255,255,.25);
-        border-radius: 20px;
-    }
-
-    #about .about__content::-webkit-scrollbar-thumb:hover {
-        background: rgba(255,255,255,.45);
+    #about .about__role {
+        margin-top: 14px;
     }
 
     #about .prose {
-        margin-bottom: 40px;
+        width: min(72ch, 100%);
+        margin-top: clamp(18px, 2.2vh, 28px);
+        margin-bottom: 0;
+        font-size: clamp(16px, 1.2vw, 18px);
+        line-height: 1.58;
     }
 
     #about .prose p:last-child {
         margin-bottom: 0;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1300px) {
+
+    #about {
+        padding-top: clamp(34px, 5vh, 52px);
+        padding-bottom: clamp(18px, 2.4vh, 28px);
+        align-content: flex-start;
+    }
+
+    #about .section__inner {
+        width: 100%;
+        max-width: none;
+        min-height: 0;
+        height: auto;
+        align-items: center;
+        justify-content: flex-start;
+        overflow: visible;
+    }
+
+    #about .about {
+        grid-template-columns: minmax(220px, 250px) minmax(500px, 560px);
+        gap: clamp(22px, 2.4vw, 30px);
+        width: min(850px, 100%);
+        max-width: 850px;
+        margin-inline: auto;
+        justify-self: center;
+        justify-content: center;
+        align-items: start;
+    }
+
+    #about .about__image {
+        height: clamp(240px, 30vh, 320px);
+        max-height: 320px;
+        margin-top: clamp(76px, 10vh, 96px);
+    }
+
+    #about .about__role {
+        margin-top: 10px;
+    }
+
+    #about .about__name {
+        font-size: clamp(24px, 2vw, 30px);
+        line-height: 1.22;
+        padding-top: 0.12em;
+    }
+
+    #about .about__role {
+        font-size: clamp(14px, 1vw, 16px);
+        line-height: 1.38;
+    }
+
+    #about .prose {
+        width: min(64ch, 100%);
+        margin-top: clamp(10px, 1.2vh, 14px);
+        font-size: clamp(13px, 0.95vw, 15px);
+        line-height: 1.38;
+    }
+
+    #about .prose p + p {
+        margin-top: 0.58em;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1300px) and (max-height: 720px) {
+
+    #about {
+        padding-top: 26px;
+        padding-bottom: 14px;
+    }
+
+    #about .about__image {
+        height: clamp(210px, 28vh, 280px);
+        max-height: 280px;
+        margin-top: clamp(64px, 9vh, 78px);
+    }
+
+    #about .prose {
+        font-size: clamp(12.5px, 0.9vw, 14px);
+        line-height: 1.32;
+    }
+
+    #about .prose p + p {
+        margin-top: 0.44em;
     }
 }
 
@@ -2190,21 +2280,29 @@
 
     #about .section__inner {
         height: auto;
+        max-height: none;
+        overflow: visible;
     }
 
     #about .about {
         display: block;
+        text-align: center;
     }
 
     #about .about__image {
         position: static;
-        width: 100%;
+        width: min(460px, 82vw);
+        max-width: 100%;
+        max-height: none;
+        margin-inline: auto;
         margin-bottom: 32px;
     }
 
     #about .about__content {
         overflow: visible;
         padding-right: 0;
+        width: min(680px, 100%);
+        margin-inline: auto;
     }
 }
 
